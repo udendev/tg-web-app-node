@@ -1,9 +1,8 @@
-import TelegramBot from 'node-telegram-bot-api';
 import express from 'express';
 import cors from 'cors';
 
+const TelegramBot = require('node-telegram-bot-api');
 const token = '6752669869:AAG7Hxuz9unVjgvLvhOYzcqxeqqB5v5qHB0';
-
 const webAppUrl = 'https://master--helpful-toffee-d33ee9.netlify.app';
 
 const bot = new TelegramBot(token, { polling: true });
