@@ -58,6 +58,7 @@ app.post('/web-data', async (req, res) => {
     console.log(req.body);
 
     try {
+        console.log('Ждем');
         await bot.answerWebAppQuery(queryId, {
             type: 'article',
             id: queryId,
