@@ -49,16 +49,16 @@ bot.on('message', async (msg) => {
 });
 
 app.get('/web-data', (req, res) => {
+    console.log('Данные получены ...');
     res.send('Данные получены ...');
 });
 
 app.post('/web-data', async (req, res) => {
     const { queryId, products = [], totalPrice } = req.body;
-
+    console.log('Ждем');
     console.log(req.body);
 
     try {
-        console.log('Ждем');
         await bot.answerWebAppQuery(queryId, {
             type: 'article',
             id: queryId,
