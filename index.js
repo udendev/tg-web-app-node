@@ -48,8 +48,14 @@ bot.on('message', async (msg) => {
     bot.sendMessage(chatId, 'Received your message');
 });
 
+app.get('/web-data', (req, res) => {
+    res.send('Данные получены ...');
+});
+
 app.post('/web-data', async (req, res) => {
     const { queryId, products = [], totalPrice } = req.body;
+
+    console.log(req.body);
 
     try {
         await bot.answerWebAppQuery(queryId, {
